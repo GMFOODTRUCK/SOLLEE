@@ -13,6 +13,8 @@ update foodtruck set foodtrucklike=300 where foodtrucknum=4;
 SELECT foodtrucklike FROM FOODTRUCK where foodtrucknum=5;
 commit
 
+select * from owner where owneremail='admin1@foodtruck.com';
+
 select sum(salesvalue) as ∏≈√‚
 from sales
 group by to_char(to_date(salesdate,'dd-mm-yyyy'), 'dd');

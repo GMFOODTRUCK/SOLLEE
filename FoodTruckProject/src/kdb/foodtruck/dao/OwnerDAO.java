@@ -3,10 +3,10 @@ package kdb.foodtruck.dao;
 
 import java.util.List;
 
-import org.apache.ibatis.session.SqlSession;
-
 import kdb.foodtruck.dao.DBManager;
 import kdb.foodtruck.dto.Owner;
+
+import org.apache.ibatis.session.SqlSession;
 
 public class OwnerDAO {
 	private static OwnerDAO dao = new OwnerDAO();

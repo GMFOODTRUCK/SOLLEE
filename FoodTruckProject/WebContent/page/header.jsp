@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!-- Navigation -->
+ <!-- Navigation -->
+   <!-- Navigation -->
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -20,12 +21,38 @@
                     <li class="hidden">
                         <a href="#page-top"></a>
                     </li>
+                    <%
+                    	String login = "";
+            	
+                    	if(session.getAttribute("customerNum")!=null) {
+                    		login = (String) session.getAttribute("id")+"고객님";
+                    	} else if(session.getAttribute("ownerNum")!=null) {
+                    		login = (String) session.getAttribute("id")+"업주님";
+                    	} else {
+                    		login ="로그인";
+                    	}
+                    %>
                     <li>
-                        <a class="page-scroll" href="./page/login.jsp" data-target="#myModal" data-toggle="modal">로그인 </a>
+                        <a class="page-scroll" href="./login.jsp" data-target="#myModal" data-toggle="modal"><%=login %></a>
                     </li>
+                    <%
+                    	String register = "";
+                    	if(!login.equals("로그인")) {
+                    		register = "로그아웃";
+                    %>
                     <li>
-                        <a class="page-scroll" href="./page/register.jsp" data-target="#myModal" data-toggle="modal">회원가입 </a>
+                        <a class="page-scroll" href="./logout.jsp" data-target="#myModal" data-toggle="modal"><%=register %></a>
                     </li>
+                    <%
+                    	} else {
+                    		register = "회원가입";
+                    %>
+                    <li>
+                        <a class="page-scroll" href="./register.jsp" data-target="#myModal" data-toggle="modal"><%=register %></a>
+                    </li>
+                    <%
+                    	}
+                    %>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
