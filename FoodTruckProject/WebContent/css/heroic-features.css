@@ -1,0 +1,185 @@
+/*!
+ * Start Bootstrap - Heroic Features HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+.hero-spacer {
+    margin-top: 50px;
+    background-image: url('../img/ft6.jpg');
+}
+
+.hero-feature {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+{ width: 90% }
+
+.chart-horiz .chart { width: 90% }
+
+.chart-horiz .chart li {
+  display: block;
+  height: 23px;
+  margin-top: 3px;
+  position: relative
+}
+
+.chart-horiz .chart li:before {
+  color: #fff;
+  content: attr(title);
+  left: 5px;
+  position: absolute
+}
+
+.chart-horiz .chart li.title:before {
+  color: black;
+  font-weight: bold;
+  left: 0
+}
+
+.chart-horiz .chart li:first-child { margin-top: 0 }
+
+.chart-horiz .chart li .bar {
+  background: #EF4089;
+  height: 100%;
+  min-width: 164px
+}
+
+.chart-horiz .chart li .number {
+  color: #EF4089;
+  font-size: 18px;
+  font-weight: bold;
+  padding-left: 5px;
+  position: absolute;
+  top: -3px
+}
+
+.chart-horiz .chart li.past .bar { background: #EF4089 }
+
+.chart-horiz .chart li.past .number { color: #EF4089 }
+
+/* 월별 차트 */
+.SimpleChart {
+            position: relative;
+            height: 300px;
+        }
+
+            .SimpleChart #tip {
+                background-color: #f0f0f0;
+                border: 1px solid #d0d0d0;
+                position: absolute;
+                left: -200px;
+                top: 30px;
+            }
+
+        .down-triangle {
+            width: 0;
+            height: 0;
+            border-top: 10px solid #d0d0d0;
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+            position: absolute;
+            left: -200px;
+        }
+
+
+        .SimpleChart #highlighter {
+            position: absolute;
+            left: -200px;
+        }
+
+        .-simple-chart-holder {
+            float: left;
+            position: relative;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #cecece;
+            /*padding: 6px;*/
+        }
+
+
+        .SimpleChart .legendsli {
+            list-style: none;
+        }
+
+            .SimpleChart .legendsli span {
+                float: left;
+                vertical-align: middle;
+            }
+
+                .SimpleChart .legendsli span.legendindicator {
+                    position: relative;
+                    top: 5px;
+                }
+
+                    .SimpleChart .legendsli span.legendindicator .line {
+                        width: 30px;
+                        height: 3px;
+                    }
+
+                    .SimpleChart .legendsli span.legendindicator .circle {
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 20px;
+                        position: relative;
+                        top: -5px;
+                        right: 20px;
+                    }
+
+
+        /******Starts::Horizontal Alignment of Legends******/
+
+        .simple-chart-legends {
+            background: #E7E7E7;
+            border: 1px solid #d6d7dd;
+            padding: 5px;
+            margin: 2px 0px;
+        }
+
+            .simple-chart-legends ul {
+            }
+
+                .simple-chart-legends ul li {
+                    display: inline;
+                    border-right: 1px solid #d6d7dd;
+                    float: left;
+                    padding: 10px;
+                }
+
+                    .simple-chart-legends ul li:last-child {
+                        border-right: 0px;
+                    }
+
+
+            .simple-chart-legends.vertical {
+                margin: 0px 10px;
+            }
+
+                .simple-chart-legends.vertical ul li {
+                    display: block;
+                    border: 0px;
+                    border-bottom: 1px solid #d6d7dd;
+                }
+
+                    .simple-chart-legends.vertical ul li:last-child {
+                        border-bottom: 0px;
+                    }
+
+            .simple-chart-legends .legendvalue {
+                padding-left: 2px;
+                background: #fff;
+            }
+
+        /******Starts::Horizontal Alignment of Legends******/
+        .simple-chart-Header {
+            position: absolute;
+            font-size: 16px;
+        }

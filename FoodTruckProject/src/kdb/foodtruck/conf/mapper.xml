@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="kdb.foodtruck.mapper">
+	
+	<insert id="insertSales" parameterType="Sales">
+		
+		insert into sales values(sales_seq.nextval, #{foodtruckNum}, default, #{salesValue})
+		
+		<selectKey keyProperty="salesNum" resultType="int" order="BEFORE">
+            select sales_seq.nextval from dual
+        </selectKey>
+	
+	</insert>
+	
+	<select id="selectWeekSales" resultType="Sales">
+	   
+	   <![CDATA[
+	      select * 
+	      from sales 
+	      where salesdate between TRUNC(SYSDATE, 'D') and TRUNC(SYSDATE, 'D')+6 
+	      order by salesdate
+	   ]]>
+   
+   </select>
+   
+   <select id="selectAllSales" resultType="Sales">
+	   
+	   <![CDATA[
+	      select * from sales
+	   ]]>
+   
+   </select>
+   
+   <select id="selectSalesValue" resultType="int">
+   	
+   	<![CDATA[
+   		select sum(salesvalue)
+		from sales
+		group by to_char(to_date(salesdate,'dd-mm-yyyy'), 'dd')
+   	]]>
+   
+   </select>
+   
+   <update id="updateSales" parameterType="Sales">
+   		update sales set salesvalue=#{salesValue} where salesdate=#{salesDate}
+   </update>
+   
+   <insert id="insertCustomer" parameterType="Customer"> 
+
+	insert into customer 
+	 	values (customer_seq.nextval, #{customerName},#{customerEmail}, #{customerPwd}, #{customerPnum}, #{customerAddr}, #{customerGender}, #{customerBdate}) 
+	
+	         <selectKey keyProperty="customerNum" resultType="int" order="AFTER"> 
+	           select customer_seq.nextval from dual 
+	         </selectKey> 
+	</insert> 
+	
+	<select id="checkOwner" parameterType="Owner" resultType="Owner">
+		<![CDATA[
+   		select *
+		from owner
+		where owneremail=#{ownerEmail}
+   		]]>
+	</select>
+	
+	<select id="checkCustomer" parameterType="Customer" resultType="Customer">
+		<![CDATA[
+   		select *
+		from customer
+		where customeremail=#{customerEmail}
+   		]]>
+	</select>
+	
+</mapper>
